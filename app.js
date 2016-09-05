@@ -10,7 +10,7 @@ const rl = readline.createInterface({
 // get AAD config
 var _config = require('./config.js');
 
-rl.question('Save to 1. CSV (Default), 2. JSON, 3. DB? Enter number bewteen 1 ~ 3: ', (answer) => {
+rl.question('Save to 1. CSV(Default), 2. JSON, 3. DB? Enter number bewteen 1 ~ 3: ', (answer) => {
 
     var option = (answer) ? parseInt(answer) : 1;
     console.log('You selected:', option);
@@ -105,14 +105,15 @@ var filepath = 'c:\\';
 function saveToCSV(meters) {
 
     var date = new Date();
-    filepath += "azureprice_" + date.toDateString() + ".txt";
+    filepath += "azureprice_" + date.toDateString() + ".csv";
 
     var price_csv = 'MeterId, MeterName, MeterCategory, MeterSubCategory, MeterRegion, Unit, MeterRates[0]\r\n';
     for (var i = 0; i < meters.length; i++) {
         var meter = meters[i];
 
         price_csv += util.format("%s, %s, %s, %s, %s, %s, %d\r\n",
-            meter.MeterId, meter.MeterName, meter.MeterCategory, meter.MeterSubCategory, meter.MeterRegion, meter.Unit, meter.MeterRates[0]);
+            meter.MeterId, meter.MeterName.replace(/,/g, ''), meter.MeterCategory, meter.MeterSubCategory,
+            meter.MeterRegion, meter.Unit.replace(/,/g, ''), meter.MeterRates[0]);
     }
 
     fs.writeFile(filepath, price_csv, function (err) {
