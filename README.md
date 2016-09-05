@@ -4,6 +4,8 @@ Azure Price (ratecard) API sample
 
 * [https://msdn.microsoft.com/en-us/library/azure/mt219004.aspx](https://msdn.microsoft.com/en-us/library/azure/mt219004.aspx)
 
+This sample app saves current Azure PAYG(MS-AZR-0003p) price into CSV format file, JSON format file or SQL Database
+
 # Setup & Run
 
 1. Update `./config.js`

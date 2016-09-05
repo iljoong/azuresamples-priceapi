@@ -31,7 +31,6 @@ rl.question('Save to 1. CSV (Default), 2. JSON, 3. DB? Enter number bewteen 1 ~ 
 
 });
 
-
 function getToken(func) {
 
     var config = {
