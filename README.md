@@ -1,10 +1,24 @@
 # Description
 
-Azure Price (ratecard) API sample
+List of Azure Service Management API samples
 
-* [https://msdn.microsoft.com/en-us/library/azure/mt219004.aspx](https://msdn.microsoft.com/en-us/library/azure/mt219004.aspx)
+1. Price (ratecard) API
 
-This sample app saves current Azure PAYG(MS-AZR-0003p) price into CSV format file, JSON format file or SQL Database
+    * API document: [https://msdn.microsoft.com/en-us/library/azure/mt219004.aspx](https://msdn.microsoft.com/en-us/library/azure/mt219004.aspx)
+
+    * This sample app saves current Azure PAYG(MS-AZR-0003p) price into CSV format file, JSON format file or SQL Database
+
+2. Usage API
+
+    * API document: [https://msdn.microsoft.com/en-us/library/azure/mt219003.aspx](https://msdn.microsoft.com/en-us/library/azure/mt219003.aspx)
+
+    * This sample app saves __usage___ into JSON format
+
+3. Azure VM size in all regions
+
+    * API document: [https://msdn.microsoft.com/en-us/library/azure/mt269440.aspx](https://msdn.microsoft.com/en-us/library/azure/mt269440.aspx)
+
+    * This sample app saves __VM sizes in all regions__ into JSON format
 
 # Setup & Run
 
@@ -12,9 +26,9 @@ This sample app saves current Azure PAYG(MS-AZR-0003p) price into CSV format fil
 
 2. `npm install`
 
-3. `npm start`
+3. `node price` or `node usage` or `node vmsize`
 
-# Table schema for SQL
+# Table schema for SQL (Price API sample)
 
 ```sql
 CREATE TABLE [dbo].[AzurePrice] (
